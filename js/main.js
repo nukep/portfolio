@@ -1,0 +1,1 @@
+!function(a){function b(){a(".sprite").waypoint(function(){a(this).addClass("animated wobble")},{offset:"bottom-in-view"})}var c=a("html, body"),d=a("#mypage").smoothState({prefetch:!0,pageCacheSize:4,onStart:{duration:250,render:function(){d.toggleAnimationClass("is-exiting"),c.animate({scrollTop:0})}},callback:function(){b()}}).data("smoothState");b()}(jQuery);
