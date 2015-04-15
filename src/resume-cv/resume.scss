@@ -1,0 +1,191 @@
+//$visual-grid: true;
+@import "../style/bourbon";
+@import "../style/neat";
+@import "../style/font-awesome/font-awesome";
+
+@import url(http://fonts.googleapis.com/css?family=Open+Sans:400italic,400,700,300);
+
+html, body {
+    height: 100%;
+}
+
+body {
+    font-family: 'Open Sans', sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+a {
+    text-decoration: none;
+}
+
+.container {
+    @include outer-container;
+    margin-bottom: 16px;
+}
+
+@mixin box($title, $span:6) {
+    @include span-columns($span);
+
+    padding: 0.5em 1em;
+
+    &:before {
+        display: block;
+        content: $title;
+        font-size: 1.5em;
+        padding: 0;
+        margin-bottom: 0.5em;
+    }
+
+}
+
+@mixin icon-left($glyph, $text:'') {
+    &:before {
+        font-family: 'FontAwesome', 'Open Sans', sans-serif;
+        font-style: normal;
+        font-weight: normal;
+        @if $text == '' {
+            content: $glyph;
+            width: 2em;
+        } @else {
+            content: $glyph + '  ' + $text;
+            margin-right: 1em;
+        }
+        display: inline-block;
+    }
+}
+
+@mixin comma-ul {
+    display: inline;
+    list-style: none;
+    padding: 0;
+    li {
+        display: inline;
+        &:after {
+            content: ", ";
+        }
+        &:last-child:after {
+            content: "";
+        }
+    }
+}
+
+.email {
+    @include icon-left($fa-var-envelope);
+}
+
+.cell {
+    @include icon-left($fa-var-phone);
+}
+
+.web {
+    @include icon-left($fa-var-globe);
+}
+
+.github {
+    @include icon-left($fa-var-github, 'GitHub');
+}
+
+.school {
+    @include icon-left($fa-var-graduation-cap);
+    font-weight: bold;
+}
+
+.date {
+    @include icon-left($fa-var-clock-o);
+    font-style: oblique;
+}
+
+.header, .top, .middle, .bottom {
+    margin-bottom: 0;
+    margin-top: 0;
+    padding: 24px 40px;
+}
+
+.header {
+    background-color: #222;
+    color: #fff;
+    h1 {
+        text-align: center;
+        font-size: 2.5em;
+        margin: 0;
+        font-weight: 300;
+    }
+}
+
+.top {
+    background-color: #f8f8f8;
+    padding-top: 1em;
+    padding-bottom: 1em;
+    margin-bottom: 1em;
+}
+
+.middle, .bottom {
+    padding-top: 8px;
+    padding-bottom: 0;
+}
+
+#contact {
+    @include box('Contact & Info', 4.5);
+}
+
+#open-source {
+    @include box('Open source', 3);
+}
+
+#education {
+    @include box('Education', 4.5);
+}
+
+
+
+@mixin listing($title) {
+    @include span-columns(12);
+
+    padding: 0.25em 0.5em;
+
+    &:before {
+        display: inline;
+        content: $title;
+        font-size: 1.1em;
+        font-weight: bold;
+        padding: 0;
+        margin-bottom: 0.5em;
+    }
+
+    ul {
+        @include comma-ul;
+    }
+}
+
+#programming {
+    @include listing('Programming languages: ');
+}
+
+#db {
+    @include listing('Database: ');
+}
+
+#web {
+    @include listing('Web: ');
+}
+
+#tech {
+    @include listing('Technologies: ');
+}
+
+#tech-skills {
+    @include box('Technological skills', 5);
+}
+
+#soft-skills {
+    @include box('Soft skills', 5);
+}
+
+#projects {
+    @include box('Projects', 12);
+}
+
+#work {
+    @include box('Work experience', 12);
+}

@@ -1,0 +1,14 @@
+extends layout
+
+block title
+  title Resume and CV
+
+block content
+  section: .container
+    div: a(href='resume.html', target='_self').view View Resume (.html)
+    div: a(href='cv.html', target='_self').view View CV (.html)
+
+    hr
+
+    div: a(href='pdf/resume.pdf', target='_self').download Download Resume (.pdf)
+    div: a(href='pdf/cv.pdf', target='_self').download Download CV (.pdf)

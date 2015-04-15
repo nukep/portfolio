@@ -1,0 +1,17 @@
+@mixin icon-left($glyph) {
+    &:before {
+        font-family: 'FontAwesome';
+        font-style: normal;
+        content: $glyph;
+        margin-right: 0.5em;
+        color: black;
+    }
+}
+
+.download {
+    @include icon-left($fa-var-download);
+}
+
+.view {
+    @include icon-left($fa-var-eye);
+}

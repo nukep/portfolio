@@ -1,0 +1,17 @@
+doctype html
+
+mixin work(place, date)
+  h2= place
+  .date= date
+  block
+
+html(lang="en")
+  head
+    meta(charset='UTF-8')
+    title Resume
+    link(rel='stylesheet', href='css/resume.css')
+  body
+    .header
+      h1 Danny Spencer
+    .container
+      include cv.md

@@ -1,0 +1,42 @@
+#github {
+    .octocat {
+        font-size: 6em;
+        margin: 0 24px;
+        color: black;
+    }
+    h2 {
+        font-size: 1.5em;
+        font-weight: 400;
+        display: inline;
+        position: relative;
+        top: -20px;
+    }
+}
+
+.screenshot {
+    $thumb-width: 256px;
+    width: 100%;
+    @media (min-width: ($thumb-width * 2 + 96px)) {
+        &.left {
+            width: $thumb-width;
+            float: left;
+            margin-right: 16px;
+        }
+        &.right {
+            width: $thumb-width;
+            float: right;
+            margin-left: 16px;
+        }
+    }
+}
+
+.project {
+    ul, blockquote {
+        overflow: hidden;
+    }
+    .time {
+        margin: 16px;
+        font-style: oblique;
+        @include icon-left($fa-var-clock-o);
+    }
+}

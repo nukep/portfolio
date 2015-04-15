@@ -1,0 +1,120 @@
+extends layout
+
+block title
+  title Projects
+
+mixin project(name, url, date)
+  section: .container.project
+    h1
+      a(href=url)
+        i.fa.fa-external-link &nbsp;
+        =name
+    div.time= date
+    block
+    div(style='clear: both')
+
+mixin image-left(src)
+  a(href=src, target='_blank')
+    img(src=src).screenshot.left
+
+mixin image-right(src)
+  a(href=src, target='_blank')
+    img(src=src).screenshot.right
+
+block content
+  section#github: .container
+    a(href='https://github.com/nukep', target='_blank')
+      i.fa.fa-github.octocat.sprite
+      h2 GitHub (nukep)
+      
+  +project('LlamaDB', 'https://github.com/nukep/llamadb', 'March 2015 - ongoing')
+    :markdown
+      A simple SQL database that I drummed up so that I could learn more about the internals of SQL databases.
+      I learned about B+Trees and obscure SQL features, mostly. It's written in the [Rust programming language](http://rust-lang.org).
+      
+      You can read more about the initial development of LlamaDB in my blog post [here](https://nukep.github.io/progblog/2015/04/15/developing-llamadb.html).
+
+  +project('Mr. Scroll', 'http://ludumdare.com/compo/ludum-dare-31/?action=preview&uid=31244', 'December 2014')
+    +image-left('assets/mr-scroll-screenshot.jpg')
+    :markdown
+      A game for the Ludum Dare 31 jam, written in [Rust](http://rust-lang.org)!
+
+      Ludum Dare is a tri-yearly competition for which developers are required to develop a game
+      from scratch in either 48 or 72 hours. The gimmick for my entry is a single-screen platformer that scrolls
+      across screen boundaries (like Pac-Man), and using the scrolling mechanism as a game mechanic.
+
+      Overall, I got 52nd place out of 2640 in the jam, and 17th place for "Innovation".
+
+  +project('Rust cubes demo', 'https://github.com/nukep/rust-cubes-demo', 'November 2014')
+    +image-right('assets/rust-cubes-demo-screenshot.png')
+    :markdown
+      My first real project in the programming language [Rust](http://rust-lang.org)!
+      This is where most of my Rust learning happened.
+      
+      The application is targetted for OpenGL 3 and uses GLSL shaders.
+      It runs on Windows, Mac OS X and Linux.
+
+      Spin the cube. Zoom the cube. Explode the cube.
+
+      I love the feel of this, and I feel it gets addicting after a while. It looks nice, too!
+      
+
+  +project('nesemu', 'https://github.com/nukep/nesemu', 'October 2013')
+    +image-left('assets/nesemu-screenshot.png')
+    :markdown
+      What's a better way to burn time during a slow period at school? Write your own gaming console emulator, of course!
+
+      For clarification, writing a NES emulator requires:
+
+      * Writing a [6502 microprocessor emulator](https://en.wikipedia.org/wiki/MOS_Technology_6502)
+      * Writing the graphics chip, or the Picture Processing Unit (PPU)
+      * Reading lots of spotty documentation, much of which outlines quirks of the original hardware
+
+
+      Two weeks of work went into this puppy, and it's still nowhere close to the "real" emulators out there.
+      But hey, at least it plays Super Mario Bros.!
+
+    a(href='https://github.com/nukep/nesemu/releases/latest', target='blank').download Download (.jar)
+
+
+  +project('OpticNav', 'https://github.com/nukep/opticnav', 'September 2013 – April 2014')
+    +image-left('assets/opticnav-screenshot2.png')
+    :markdown
+      OpticNav was the final Capstone project that my group and I worked on at SAIT Polytechnic,
+      in collaboration with the SAIT ARIS RADLab.
+      It was designed as a proof-of-concept augmented reality maps system with corresponding web and Android apps.
+      
+      In practice, we found that indoor GPS was too terrible to be useful, so this project only really works _in theory_ (maybe in the future with WPS positioning).
+      Regardless, it was a good learning experience for everyone involved.
+
+  +project('Battleship', 'https://github.com/nukep/battleship', 'September 2013')
+    +image-right('assets/battleship-screenshot.png')
+    :markdown
+      Made for the 3rd semester Java course at SAIT, ITSD program.
+
+      The assignment was to create a multiplayer, match-making (networked) game
+      in Java. We were given the choice of Tic-Tac-Toe, or Battleship.
+
+      The instructor gave compliments about the game's unique style, and how
+      (most importantly) it was functional.
+      I'm proud of it, and it's still fun to play.
+
+    a(href='https://github.com/nukep/battleship/releases/latest', target='blank').download Download (.jar)
+
+  +project('FamiTracker CX', 'https://github.com/nukep/famitracker-cx', 'May 2012 – January 2013')
+    +image-left('assets/fami-screenshot1.png')
+    :markdown
+      This was my first ever open-source project, and it's already making me
+      feel nostalgic.
+
+      This project was born out of the frustration that Linux versions of
+      programs I like didn't exist. In this case, it was
+      [FamiTracker](http://famitracker.com).
+
+      > *"Why not port it yourself?" I asked myself.* So I did.
+
+      The main technical challenge was porting the GUI from MFC to Qt.
+      MFC is Windows-only, and Qt is cross-platform.
+      This project made me realize how passionately I _hate_ MFC.
+
+      Unfortunately, I'm no longer supporting the project.

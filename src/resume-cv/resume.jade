@@ -1,0 +1,123 @@
+doctype html
+
+mixin work(place, date)
+  h2= place
+  .date= date
+  block
+
+html(lang="en")
+  head
+    meta(charset='UTF-8')
+    title Resume
+    link(rel='stylesheet', href='css/resume.css')
+  body
+    .header
+      h1 Danny Spencer
+    .container.top
+      #contact
+        .email dan.spencer.np@gmail.com
+        .web: a(href='https://nukep.github.io/portfolio') nukep.github.io/portfolio
+
+      #open-source
+        .github: a(href='https://github.com/nukep') github.com/nukep
+        p 10+ open source projects and counting!
+
+      #education
+        .school SAIT Polytechnic
+        .date September 2012 – April 2014
+        div Diploma
+        div Information Technology,<br>Software Development
+
+    .container.middle
+      #programming
+        :markdown
+          * C
+          * C++
+          * Java
+          * JavaScript
+          * Python
+          * PHP
+          * Rust
+          
+      #db
+        :markdown
+          * MySQL
+          * SQLite
+          * Oracle
+          * MongoDB
+          * database design
+          * 3NF normalization
+
+      #web
+        :markdown
+          * HTML
+          * CSS
+          * JavaScript
+          * Sass
+          * node.js
+          * Apache
+          * nginx
+          * jQuery
+          * AJAX
+          * REST
+          * Spring
+          * Ember.js
+          * responsive design
+
+      #tech
+        :markdown
+          * Windows
+          * Linux
+          * Docker
+          * Git
+          * gcc
+          * clang
+          * MSVC
+          * gdb
+          * Valgrind
+          * Android SDK
+          * PhoneGap
+          * Qt
+          * OpenGL
+
+    .container.middle
+      #projects
+        :markdown
+          * LlamaDB: My own work-in-progress SQL database
+          * rust-sdl2: Rust bindings for the SDL2 library
+          * Mr. Scroll: Ludum Dare 31 game jam entry, made in 72 hours
+          * nesemu: A hacky NES emulator written in Java
+          * OpticNav: Capstone project, proof-of-concept augmented reality maps software
+          * FamiTracker CX: A cross-platform fork of FamiTracker (8-bit chiptune software)
+
+      #tech-skills
+        :markdown
+          * Unit, integration testing
+          * Test-driven development
+          * Ergonomic API design
+          * Concurrent programming
+          * Debugging and troubleshooting
+          * SOLID principles
+          * Undefined behavior mitigation in C and C++
+
+      #soft-skills
+        :markdown
+          * Learns new concepts quickly; productive with new languages in approx. 2 weeks
+          * Issue tracking - Redmine, GitHub
+          * Critical, applied thinking and problem solving
+          * Loves to talk about exciting ideas
+          * Gets along well with others
+          * Positive outlook
+
+
+    .container.bottom
+      #work
+        +work('SAIT ARIS RADLab', 'Contracted April 2014 – June 2014')
+          :markdown
+            * Junior Software Developer
+            * Assist projects in the RADLab
+            * Full-stack developer for prototypical web and mobile applications
+
+        +work('Data entry for PMAST', 'Contracted January 2012 – April 2012')
+          :markdown
+            * Enter written feedback from students into an online database, 80 WPM

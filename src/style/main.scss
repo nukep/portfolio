@@ -1,0 +1,158 @@
+@import "bourbon";
+@import "neat";
+@import "font-awesome/font-awesome";
+
+@import "icons";
+@import "transition";
+@import "projects";
+@import "cv";
+
+@import url(http://fonts.googleapis.com/css?family=Open+Sans:400italic,400,700,300);
+
+$header-color-top: #223;
+$header-color-bottom: shade($header-color-top, 5%);
+
+$footer-color: #ccc;
+$footer-color-bottom: tint($footer-color, 20%);
+
+@mixin headings($from: 1, $to: 6){
+    @for $i from $from through $to{
+      h#{$i}{
+        @content
+      }
+    }
+}
+
+@include headings() {
+    font-family: 'Open Sans', sans-serif;
+    font-weight: 300;
+}
+
+html, body {
+    height: 100%;
+}
+
+body {
+    font-family: 'Open Sans', sans-serif;
+    margin: 0;
+    background-color: $footer-color-bottom;
+}
+
+a {
+    text-decoration: none;
+    color: #33f;
+}
+a:visited {
+    color: #008;
+}
+
+h1 {
+    font-size: 2.5em;
+}
+h2 {
+    font-size: 2.0em;
+}
+
+.container {
+    @include outer-container;
+}
+
+// For use with (un)ordered list
+@mixin horizontal-list($spacing) {
+    margin: 0;
+    padding: 0;
+    list-style-type: none;
+
+    li {
+        display: inline;
+        margin-right: $spacing;
+    }
+}
+
+nav {
+    background-color: $header_color-bottom;
+
+    ul {
+        @include horizontal-list(0.5em);
+    }
+
+    a {
+        @include button(#556);
+    }
+    a, a:visited {
+        color: white;
+    }
+}
+
+@mixin horizontal-shadows($length: 15px, $color: black) {
+    position: relative;
+    &:before {
+        display: block;
+        box-shadow: (-$length) 0 $length (-$length) $color inset;
+        content: " ";
+        height: 100%;
+        top: 0;
+        left: (-$length);
+        position: absolute;
+        width: $length;
+    }
+    &:after {
+        display: block;
+        box-shadow: $length 0 $length (-$length) $color inset;
+        content: " ";
+        height: 100%;
+        top: 0;
+        right: (-$length);
+        position: absolute;
+        width: $length;
+    }
+}
+
+#content {
+    margin: 0;
+    background-color: #eee;
+    overflow: hidden;
+
+    .container {
+        @include horizontal-shadows(15px, rgba(0,0,0,0.25));
+        padding: 24px;
+        background-color: white;
+    }
+}
+
+#mypage {
+    background-color: #eee;
+    //overflow: hidden;     // This causes smoothstate to flicker!
+}
+
+header {
+    @include linear-gradient($header-color-top, $header-color-bottom);
+    height: 7em;
+    overflow: hidden;
+
+    h2 {
+        font-size: 3rem;
+        text-align: center;
+        color: white;
+        padding: 0;
+        margin: 0;
+        text-shadow: 0px 2px 8px black;
+        line-height: 2em;
+        white-space: nowrap;
+    }
+}
+
+footer {
+    height: 4em;
+
+    @include border-style(solid null null);
+    border-color: shade($footer-color, 10%);
+    border-width: 1px;
+
+    @include linear-gradient($footer-color, $footer-color-bottom);
+    .container {
+        p {
+            font-size: 0.9em;
+        }
+    }
+}

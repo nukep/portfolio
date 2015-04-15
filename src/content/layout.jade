@@ -1,0 +1,25 @@
+doctype html
+html(lang="en")
+  head
+    meta(charset='UTF-8')
+    block title
+    // On mobile devices, the viewport should fit snugly with the screen
+    meta(name='viewport', content='width=device-width, initial-scale=1')
+    each source in css
+      link(rel='stylesheet', href=source)
+  body
+    header
+      h2 Danny Spencer
+    #mypage.m-scene
+      nav: .container
+        ul
+          li: a(href='.').active About me
+          li: a(href='projects.html') Projects
+          li: a(href='resume-cv.html') Resume and CV
+          li: a(href='https://nukep.github.io/progblog/', target='_blank') Blog
+      #content.scene_element.scene_element--fadein
+        block content
+      footer: .container: :markdown
+        The source code used to generate this site can be found on [GitHub](https://github.com/nukep/portfolio "Now all we need is a "Fork me on GitHub" banner on the top right of this page. GitHub GitHub GitHub...")
+    each source in js
+      script(src=source)
