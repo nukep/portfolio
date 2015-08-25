@@ -1,4 +1,4 @@
-<!DOCTYPE html><html lang="en"><head><meta charset="UTF-8"><title>Resume</title><link rel="stylesheet" href="css/resume.css"></head><body><div class="header"><h1>Danny Spencer</h1></div><div class="container"><h1>Information</h1>
+<!DOCTYPE html><html lang="en"><head><meta charset="UTF-8"><title>Resume</title><link rel="stylesheet" href="css/resume.css"></head><body><div class="header"><h1>Danny Spencer</h1></div><div class="container middle"><h1>Information</h1>
 
 <ul><li>Danny Spencer</li><li>Email: <a href="mailto:dan.spencer.np@gmail.com">dan.spencer.np@gmail.com</a></li><li>Portfolio: <a href="http://nukep.github.io/portfolio">http://nukep.github.io/portfolio</a></li><li>Blog: <a href="http://nukep.github.io/progblog">http://nukep.github.io/progblog</a></li></ul>
 
@@ -6,7 +6,7 @@
 
 <p>GitHub: <a href="https://github.com/nukep">https://github.com/nukep</a></p>
 
-<ul><li><strong>LlamaDB</strong>: A simple SQL database written in Rust</li><li><strong>libxm-rust</strong>: Rust bindings for libxm, a chiptune audio generator</li><li><strong>rust-sdl2</strong>: Rust bindings for SDL2</li><li><strong>Mr. Scroll</strong>: Ludum Dare 31, 72-hour game jam entry written in Rust</li><li><strong>rust-cubes-demo</strong>: An OpenGL, GLSL demo written in Rust</li><li>various Docker repositories<ul><li>also available at <a href="https://hub.docker.com/u/nukep/">https://hub.docker.com/u/nukep/</a></li></ul></li><li><strong>OpticNav</strong>: See below (Client projects)</li><li><strong>nesemu</strong>: a simple NES emulator written in Java for learning purposes</li><li><strong>Battleship</strong>: A networked game written in Java as a school assignment</li><li><strong>FamiTracker CX</strong>: a chiptune music tracker written in C++ for Linux,
+<ul><li><strong>LlamaDB</strong>: A simple SQL database written in Rust</li><li><strong>libxm-rs</strong>: Rust bindings for libxm, a chiptune audio generator</li><li><strong>rust-sdl2</strong>: Rust bindings for SDL2</li><li><strong>Mr. Scroll</strong>: Ludum Dare 31, 72-hour game jam entry written in Rust</li><li><strong>rust-cubes-demo</strong>: An OpenGL, GLSL demo written in Rust</li><li>various Docker repositories<ul><li>also available at <a href="https://hub.docker.com/u/nukep/">https://hub.docker.com/u/nukep/</a></li></ul></li><li><strong>OpticNav</strong>: See below (Client projects)</li><li><strong>nesemu</strong>: a simple NES emulator written in Java for learning purposes</li><li><strong>Battleship</strong>: A networked game written in Java as a school assignment</li><li><strong>FamiTracker CX</strong>: a chiptune music tracker written in C++ for Linux,
 port of FamiTracker</li></ul>
 
 <h1>Education</h1>
@@ -91,4 +91,16 @@ port of FamiTracker</li></ul>
 
 <h2>MOS 6502</h2>
 
-<ul><li>Wrote a 6502 emulator for nesemu</li><li>NES game homebrew</li></ul></div></body></html>
+<ul><li>Wrote a 6502 emulator for nesemu</li><li>NES game homebrew</li></ul></div><script src="js/vendor.js"></script><script type="text/javascript">// Separate each header section into sections that don't page-break when printed
+$('.container h1').each(function() {
+  var $set = $(this).nextUntil("h1").andSelf();
+  $set.wrapAll('<div class="cv-section" />');
+});
+$('.container h2').each(function() {
+  var $set = $(this).nextUntil("h2").andSelf();
+  $set.wrapAll('<div class="cv-section" />');
+});
+$('.container h1').each(function() {
+  var $set = $(this).next().andSelf();
+  $set.wrapAll('<div class="cv-section" />');
+});</script></body></html>

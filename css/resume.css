@@ -1605,6 +1605,11 @@ html {
 .fa-meanpath:before {
   content: "\f20c"; }
 
+@media print {
+  .cv-section {
+    page-break-inside: avoid; }
+ }
+
 html, body {
   height: 100%; }
 
@@ -1650,12 +1655,20 @@ a {
   width: 2em;
   display: inline-block; }
 
+.linkedin:before {
+  font-family: 'FontAwesome', 'Open Sans', sans-serif;
+  font-style: normal;
+  font-weight: normal;
+  content: "\f08c";
+  width: 2em;
+  display: inline-block; }
+
 .github:before {
   font-family: 'FontAwesome', 'Open Sans', sans-serif;
   font-style: normal;
   font-weight: normal;
-  content: "\f09b  GitHub";
-  margin-right: 1em;
+  content: "\f09b";
+  width: 2em;
   display: inline-block; }
 
 .school {
@@ -1706,7 +1719,7 @@ a {
   float: left;
   display: block;
   margin-right: 2.3576515979%;
-  width: 36.0264677513%;
+  width: 65.8807828007%;
   padding: 0.5em 1em; }
   #contact:last-child {
     margin-right: 0; }
@@ -1716,27 +1729,20 @@ a {
     font-size: 1.5em;
     padding: 0;
     margin-bottom: 0.5em; }
-
-#open-source {
-  float: left;
-  display: block;
-  margin-right: 2.3576515979%;
-  width: 23.2317613015%;
-  padding: 0.5em 1em; }
-  #open-source:last-child {
-    margin-right: 0; }
-  #open-source:before {
+  #contact .col1, #contact .col2 {
+    margin-top: 8px;
+    float: left;
     display: block;
-    content: 'Open source';
-    font-size: 1.5em;
-    padding: 0;
-    margin-bottom: 0.5em; }
+    margin-right: 2.3576515979%;
+    width: 48.821174201%; }
+    #contact .col1:last-child, #contact .col2:last-child {
+      margin-right: 0; }
 
 #education {
   float: left;
   display: block;
   margin-right: 2.3576515979%;
-  width: 36.0264677513%;
+  width: 31.7615656014%;
   padding: 0.5em 1em; }
   #education:last-child {
     margin-right: 0; }
