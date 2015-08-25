@@ -15,12 +15,11 @@ html(lang="en")
       h1 Danny Spencer
     .container.top
       #contact
-        .email dan.spencer.np@gmail.com
-        .web: a(href='https://nukep.github.io/portfolio') nukep.github.io/portfolio
-
-      #open-source
-        .github: a(href='https://github.com/nukep') github.com/nukep
-        p 10+ open source projects and counting!
+        .col1
+          .email dan.spencer.np@gmail.com
+        .col2
+          .github: a(href='https://github.com/nukep') github.com/nukep
+          .web: a(href='https://nukep.github.io/portfolio') nukep.github.io/portfolio
 
       #education
         .school SAIT Polytechnic
@@ -37,8 +36,9 @@ html(lang="en")
           * JavaScript
           * Python
           * PHP
+          * bash
           * Rust
-          
+
       #db
         :markdown
           * MySQL
@@ -51,14 +51,14 @@ html(lang="en")
       #web
         :markdown
           * HTML
-          * CSS
           * JavaScript
+          * CSS
           * Sass
           * node.js
+          * D3.js
           * Apache
           * nginx
           * jQuery
-          * AJAX
           * REST
           * Spring
           * Ember.js
@@ -75,7 +75,6 @@ html(lang="en")
           * MSVC
           * gdb
           * Valgrind
-          * Android SDK
           * PhoneGap
           * Qt
           * OpenGL
@@ -83,28 +82,30 @@ html(lang="en")
     .container.middle
       #projects
         :markdown
-          * LlamaDB: My own work-in-progress SQL database
-          * rust-sdl2: Rust bindings for the SDL2 library
-          * Mr. Scroll: Ludum Dare 31 game jam entry, made in 72 hours
-          * nesemu: A hacky NES emulator written in Java
-          * OpticNav: Capstone project, proof-of-concept augmented reality maps software
-          * FamiTracker CX: A cross-platform fork of FamiTracker (8-bit chiptune software)
+          * LlamaDB: A work-in-progress SQL database - Rust
+          * rust-sdl2: Library wrapper for SDL2 - Rust
+          * nesemu: A simple NES (Nintendo) emulator - Java
+          * OpticNav: Capstone project, proof-of-concept augmented reality maps software - Java
+          * FamiTracker CX: A cross-platform Qt fork of FamiTracker (8-bit chiptune software) - C++
 
       #tech-skills
         :markdown
           * Unit, integration testing
           * Test-driven development
+          * Object oriented, functional paradigms
           * Ergonomic API design
           * Concurrent programming
           * Debugging and troubleshooting
           * SOLID principles
-          * Undefined behavior mitigation in C and C++
+          * Code analysis and refactoring
+          * Algorithms, data structures
 
       #soft-skills
         :markdown
-          * Learns new concepts quickly; productive with new languages in approx. 2 weeks
+          * Learns new concepts, technologies and languages very quickly
           * Issue tracking - Redmine, GitHub
-          * Critical, applied thinking and problem solving
+          * Detailed writing: comments, issues and commit messages.
+          * Critical thinking  / problem solving
           * Loves to talk about exciting ideas
           * Gets along well with others
           * Positive outlook
@@ -114,9 +115,9 @@ html(lang="en")
       #work
         +work('SAIT ARIS RADLab', 'Contracted April 2014 – June 2014')
           :markdown
-            * Junior Software Developer
-            * Assist projects in the RADLab
-            * Full-stack developer for prototypical web and mobile applications
+            * Junior Full-stack developer for prototypical web and mobile applications; mobile via PhoneGap
+            * Collection and visualization of wireless, real-time hardware data
+            * Iteratively designed MySQL schema used for data storage
 
         +work('Data entry for PMAST', 'Contracted January 2012 – April 2012')
           :markdown

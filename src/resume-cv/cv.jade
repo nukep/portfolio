@@ -13,5 +13,20 @@ html(lang="en")
   body
     .header
       h1 Danny Spencer
-    .container
+    .container.middle
       include cv.md
+    script(src='js/vendor.js')
+    script(type='text/javascript').
+      // Separate each header section into sections that don't page-break when printed
+      $('.container h1').each(function() {
+        var $set = $(this).nextUntil("h1").andSelf();
+        $set.wrapAll('<div class="cv-section" />');
+      });
+      $('.container h2').each(function() {
+        var $set = $(this).nextUntil("h2").andSelf();
+        $set.wrapAll('<div class="cv-section" />');
+      });
+      $('.container h1').each(function() {
+        var $set = $(this).next().andSelf();
+        $set.wrapAll('<div class="cv-section" />');
+      });

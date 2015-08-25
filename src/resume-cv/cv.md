@@ -11,7 +11,7 @@ Open source
 GitHub: <https://github.com/nukep>
 
 * **LlamaDB**: A simple SQL database written in Rust
-* **libxm-rust**: Rust bindings for libxm, a chiptune audio generator
+* **libxm-rs**: Rust bindings for libxm, a chiptune audio generator
 * **rust-sdl2**: Rust bindings for SDL2
 * **Mr. Scroll**: Ludum Dare 31, 72-hour game jam entry written in Rust
 * **rust-cubes-demo**: An OpenGL, GLSL demo written in Rust

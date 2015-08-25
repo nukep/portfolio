@@ -143,7 +143,7 @@ var configureGrunt = function(grunt) {
         ['default', 'express', 'watch']);
 
     grunt.registerTask('pdf', 'Build PDFs',
-        ['jade:resume-cv', 'sass:resume-cv', 'wkhtmltopdf']);
+        ['jade:resume-cv', 'sass:resume-cv']);
 
     grunt.registerTask('prod', 'Build production',
         ['default', 'pdf', 'copy:prod', 'uglify:prod']);

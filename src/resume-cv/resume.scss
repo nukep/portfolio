@@ -5,6 +5,13 @@
 
 @import url(http://fonts.googleapis.com/css?family=Open+Sans:400italic,400,700,300);
 
+@media print
+{
+    .cv-section {
+        page-break-inside: avoid;
+    }
+}
+
 html, body {
     height: 100%;
 }
@@ -82,8 +89,12 @@ a {
     @include icon-left($fa-var-globe);
 }
 
+.linkedin {
+    @include icon-left($fa-var-linkedin-square);
+}
+
 .github {
-    @include icon-left($fa-var-github, 'GitHub');
+    @include icon-left($fa-var-github);
 }
 
 .school {
@@ -126,15 +137,16 @@ a {
 }
 
 #contact {
-    @include box('Contact & Info', 4.5);
-}
+    @include box('Contact & Info', 8);
 
-#open-source {
-    @include box('Open source', 3);
+    .col1, .col2 {
+        margin-top: 8px;
+        @include span-columns(6);
+    }
 }
 
 #education {
-    @include box('Education', 4.5);
+    @include box('Education', 4);
 }
 
 
