@@ -1,7 +1,7 @@
 var configureGrunt = function(grunt) {
     // Go through all Grunt tasks defined in package.json and load them all
     require('matchdep').filterDev(['grunt-*', '!grunt-cli']).forEach(grunt.loadNpmTasks);
-    
+
     var cfg = {
         bower_concat: {
             all: {
@@ -23,6 +23,12 @@ var configureGrunt = function(grunt) {
                 cwd: 'src/assets',
                 src: ['*'],
                 dest: 'build/assets/'
+            },
+            pdf: {
+                expand: true,
+                cwd: 'src/pdf',
+                src: ['*'],
+                dest: 'build/pdf/'
             },
             fonts: {
                 expand: true,
@@ -114,7 +120,7 @@ var configureGrunt = function(grunt) {
             assets: {
                 files: ['src/assets/*'],
                 tasks: ['copy:assets']
-            }, 
+            },
             pdf_jade: {
                 files: ['src/resume-cv/*.jade', 'src/resume-cv/*.md'],
                 tasks: ['jade:resume-cv']
@@ -123,18 +129,12 @@ var configureGrunt = function(grunt) {
                 files: ['src/resume-cv/*.scss'],
                 tasks: ['sass:resume-cv']
             }
-        },
-        wkhtmltopdf: {
-            prod: {
-                src: ['build/resume.html', 'build/cv.html'],
-                dest: 'build/pdf/'
-            }
         }
     };
     grunt.initConfig(cfg);
-    
-    grunt.registerTask('default', 'Default stuff', 
-        ['bower_concat:all', 'app-js:dev', 'sass:web', 'jade:web', 'pdf', 'copy:assets', 'copy:fonts']);
+
+    grunt.registerTask('default', 'Default stuff',
+        ['bower_concat:all', 'app-js:dev', 'sass:web', 'jade:web', 'pdf', 'copy:assets', 'copy:pdf', 'copy:fonts']);
 
     grunt.registerTask('app-js:dev', 'JavaScript stuff',
         ['concat_sourcemap:dev']);
@@ -150,4 +150,3 @@ var configureGrunt = function(grunt) {
 };
 
 module.exports = configureGrunt;
-
